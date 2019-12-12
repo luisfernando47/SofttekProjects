@@ -18,7 +18,7 @@ namespace ShoesData
         public int IdProduct { get; set; }
         public int IdSize { get; set; }
     
-        public virtual CatSize CatSize { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual CatSizes CatSizes { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

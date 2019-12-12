@@ -17,9 +17,9 @@ namespace ShoesData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CatTypeProduct()
         {
-            this.CatSizes = new HashSet<CatSize>();
-            this.CatTypeDetails = new HashSet<CatTypeDetail>();
-            this.Products = new HashSet<Product>();
+            this.CatSizes = new HashSet<CatSizes>();
+            this.CatTypeDetails = new HashSet<CatTypeDetails>();
+            this.Products = new HashSet<Products>();
         }
     
         public int IdType { get; set; }
@@ -29,10 +29,10 @@ namespace ShoesData
         public bool IsEnabled { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CatSize> CatSizes { get; set; }
+        public virtual ICollection<CatSizes> CatSizes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CatTypeDetail> CatTypeDetails { get; set; }
+        public virtual ICollection<CatTypeDetails> CatTypeDetails { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

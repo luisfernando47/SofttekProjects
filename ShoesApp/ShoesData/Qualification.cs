@@ -20,7 +20,7 @@ namespace ShoesData
         public int Count { get; set; }
         public System.DateTime DateUpdate { get; set; }
     
-        public virtual CatRating CatRating { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual CatRatings CatRatings { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

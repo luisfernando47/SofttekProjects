@@ -20,7 +20,7 @@ namespace ShoesData
         public string Description { get; set; }
         public string DateUpdate { get; set; }
     
-        public virtual CatTypeDetail CatTypeDetail { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual CatTypeDetails CatTypeDetails { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

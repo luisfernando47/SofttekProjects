@@ -21,8 +21,8 @@ namespace ShoesData
         public Nullable<System.DateTime> DateUpdate { get; set; }
         public string IsEnabled { get; set; }
     
-        public virtual CatBrand CatBrand { get; set; }
-        public virtual CatCatalog CatCatalog { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual CatBrands CatBrands { get; set; }
+        public virtual CatCatalogs CatCatalogs { get; set; }
+        public virtual Products Products { get; set; }
     }
 }
