@@ -51,8 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregaRegistro.cs" />
+    <Compile Include="DeleteReg.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryBrand.cs" />
+    <Compile Include="QueryCatalog.cs" />
+    <Compile Include="QueryColor.cs" />
+    <Compile Include="QueryProvider.cs" />
     <Compile Include="SearchID.cs" />
+    <Compile Include="QueryType.cs" />
     <Compile Include="SearchName.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -65,8 +65,8 @@
             // busquedaToolStripMenuItem
             // 
             this.busquedaToolStripMenuItem.Name = "busquedaToolStripMenuItem";
-            this.busquedaToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
-            this.busquedaToolStripMenuItem.Text = "&Busqueda";
+            this.busquedaToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
+            this.busquedaToolStripMenuItem.Text = "&Menu";
             this.busquedaToolStripMenuItem.Click += new System.EventHandler(this.busquedaToolStripMenuItem_Click);
             // 
             // label1

@@ -23,3 +23,5 @@ C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.csproj.CopyComp
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.exe
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.pdb
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.BusquedaProducto.resources
+C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.EliminarRegistro.resources
+C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.AgregarRegistro.resources

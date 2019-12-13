@@ -21,12 +21,15 @@ namespace ShoesApp
 
         private void BusquedaProducto_Load(object sender, EventArgs e)
         {
+            //load dgv
             var context = new DataProductsEntities();
             dataGridView1.DataSource = context.LFGC1_AllProducts();
+            
         }
 
         private void btnBuscaID_Click(object sender, EventArgs e) //boton buscar por id
         {
+            panel1.Visible = true;
             try
             {
                 dataGridView1.DataSource = SearchID.Get(Convert.ToInt32(txtIDproduct.Text.Trim()));
@@ -39,6 +42,7 @@ namespace ShoesApp
 
         private void btnBuscaNombre_Click(object sender, EventArgs e) //boton buscar por nombre
         {
+            panel1.Visible = true;
             try
             {
                 dataGridView1.DataSource = SearchName.Get(txtNombre.Text);
@@ -61,7 +65,8 @@ namespace ShoesApp
 
         private void btnEliminaProd_Click(object sender, EventArgs e) //btn Eliminar producto
         {
-
+            Form formularioDelete = new EliminarRegistro();
+            formularioDelete.Show();
         }
 
         private void btnreset_Click(object sender, EventArgs e) //btn reset a valor inicial del data grid

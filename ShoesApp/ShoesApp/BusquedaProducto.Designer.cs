@@ -39,7 +39,9 @@
             this.btnEditProd = new System.Windows.Forms.Button();
             this.btnEliminaProd = new System.Windows.Forms.Button();
             this.btnreset = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -76,9 +78,9 @@
             // 
             // btnBuscaID
             // 
-            this.btnBuscaID.Location = new System.Drawing.Point(291, 40);
+            this.btnBuscaID.Location = new System.Drawing.Point(291, 37);
             this.btnBuscaID.Name = "btnBuscaID";
-            this.btnBuscaID.Size = new System.Drawing.Size(77, 26);
+            this.btnBuscaID.Size = new System.Drawing.Size(77, 33);
             this.btnBuscaID.TabIndex = 4;
             this.btnBuscaID.Text = "Buscar";
             this.btnBuscaID.UseVisualStyleBackColor = true;
@@ -86,9 +88,9 @@
             // 
             // btnBuscaNombre
             // 
-            this.btnBuscaNombre.Location = new System.Drawing.Point(291, 106);
+            this.btnBuscaNombre.Location = new System.Drawing.Point(291, 103);
             this.btnBuscaNombre.Name = "btnBuscaNombre";
-            this.btnBuscaNombre.Size = new System.Drawing.Size(77, 26);
+            this.btnBuscaNombre.Size = new System.Drawing.Size(77, 33);
             this.btnBuscaNombre.TabIndex = 5;
             this.btnBuscaNombre.Text = "Buscar";
             this.btnBuscaNombre.UseVisualStyleBackColor = true;
@@ -105,9 +107,9 @@
             // 
             // btnNvoReg
             // 
-            this.btnNvoReg.Location = new System.Drawing.Point(439, 106);
+            this.btnNvoReg.Location = new System.Drawing.Point(3, 19);
             this.btnNvoReg.Name = "btnNvoReg";
-            this.btnNvoReg.Size = new System.Drawing.Size(77, 26);
+            this.btnNvoReg.Size = new System.Drawing.Size(81, 32);
             this.btnNvoReg.TabIndex = 7;
             this.btnNvoReg.Text = "Nuevo";
             this.btnNvoReg.UseVisualStyleBackColor = true;
@@ -115,9 +117,9 @@
             // 
             // btnEditProd
             // 
-            this.btnEditProd.Location = new System.Drawing.Point(552, 106);
+            this.btnEditProd.Location = new System.Drawing.Point(100, 19);
             this.btnEditProd.Name = "btnEditProd";
-            this.btnEditProd.Size = new System.Drawing.Size(77, 26);
+            this.btnEditProd.Size = new System.Drawing.Size(80, 32);
             this.btnEditProd.TabIndex = 8;
             this.btnEditProd.Text = "Editar";
             this.btnEditProd.UseVisualStyleBackColor = true;
@@ -125,9 +127,9 @@
             // 
             // btnEliminaProd
             // 
-            this.btnEliminaProd.Location = new System.Drawing.Point(660, 106);
+            this.btnEliminaProd.Location = new System.Drawing.Point(197, 19);
             this.btnEliminaProd.Name = "btnEliminaProd";
-            this.btnEliminaProd.Size = new System.Drawing.Size(77, 26);
+            this.btnEliminaProd.Size = new System.Drawing.Size(77, 32);
             this.btnEliminaProd.TabIndex = 9;
             this.btnEliminaProd.Text = "Eliminar";
             this.btnEliminaProd.UseVisualStyleBackColor = true;
@@ -143,15 +145,24 @@
             this.btnreset.UseVisualStyleBackColor = true;
             this.btnreset.Click += new System.EventHandler(this.btnreset_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnNvoReg);
+            this.panel1.Controls.Add(this.btnEditProd);
+            this.panel1.Controls.Add(this.btnEliminaProd);
+            this.panel1.Location = new System.Drawing.Point(460, 95);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(277, 73);
+            this.panel1.TabIndex = 11;
+            this.panel1.Visible = false;
+            // 
             // BusquedaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 469);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnreset);
-            this.Controls.Add(this.btnEliminaProd);
-            this.Controls.Add(this.btnEditProd);
-            this.Controls.Add(this.btnNvoReg);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBuscaNombre);
             this.Controls.Add(this.btnBuscaID);
@@ -163,6 +174,7 @@
             this.Text = "BusquedaProducto";
             this.Load += new System.EventHandler(this.BusquedaProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Button btnEditProd;
         private System.Windows.Forms.Button btnEliminaProd;
         private System.Windows.Forms.Button btnreset;
+        private System.Windows.Forms.Panel panel1;
     }
 }
