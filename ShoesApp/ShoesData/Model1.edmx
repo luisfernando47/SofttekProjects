@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CatBrands">
           <Key>
             <PropertyRef Name="IdBrand" />
@@ -147,11 +147,11 @@
             <PropertyRef Name="IdImage" />
           </Key>
           <Property Name="IdImage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="IdImageProduct" Type="int" Nullable="false" />
-          <Property Name="Decription" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Image" Type="varbinary(max)" Nullable="false" />
-          <Property Name="DateUpdate" Type="datetime" />
-          <Property Name="IsEnabled" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IdProduct" Type="int" Nullable="false" />
+          <Property Name="Decription" Type="nvarchar(max)" />
+          <Property Name="Image" Type="image" Nullable="false" />
+          <Property Name="DateUpdate" Type="datetime" Nullable="false" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -228,18 +228,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Property Name="create_date" Type="datetime" Nullable="false" />
           <Property Name="modify_date" Type="datetime" Nullable="false" />
         </EntityType>
-        <Association Name="FK_CatBrandsImagesProduct">
-          <End Role="CatBrands" Type="Self.CatBrands" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CatBrands">
-              <PropertyRef Name="IdBrand" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CatBrandsProducts">
           <End Role="CatBrands" Type="Self.CatBrands" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -261,18 +249,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </Principal>
             <Dependent Role="CatCatalogs">
               <PropertyRef Name="IdProvider" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CatCatalogsImagesProduct">
-          <End Role="CatCatalogs" Type="Self.CatCatalogs" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CatCatalogs">
-              <PropertyRef Name="IdCatalog" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -384,6 +360,18 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_IDProducto">
+          <End Role="Products" Type="Self.Products" Multiplicity="1" />
+          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImagesProduct">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ProductsCatProviders">
           <End Role="CatProviders" Type="Self.CatProviders" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -417,18 +405,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </Principal>
             <Dependent Role="DetailProduct">
               <PropertyRef Name="IdProduct" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductsImagesProduct">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -542,10 +518,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
     [database_firewall_rules2].[modify_date] AS [modify_date]
     FROM [sys].[database_firewall_rules] AS [database_firewall_rules2]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_CatBrandsImagesProduct" Association="Self.FK_CatBrandsImagesProduct">
-            <End Role="CatBrands" EntitySet="CatBrands" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
-          </AssociationSet>
           <AssociationSet Name="FK_CatBrandsProducts" Association="Self.FK_CatBrandsProducts">
             <End Role="CatBrands" EntitySet="CatBrands" />
             <End Role="Products" EntitySet="Products" />
@@ -553,10 +525,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <AssociationSet Name="FK_CatCatalogsCatProviders" Association="Self.FK_CatCatalogsCatProviders">
             <End Role="CatProviders" EntitySet="CatProviders" />
             <End Role="CatCatalogs" EntitySet="CatCatalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CatCatalogsImagesProduct" Association="Self.FK_CatCatalogsImagesProduct">
-            <End Role="CatCatalogs" EntitySet="CatCatalogs" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
           </AssociationSet>
           <AssociationSet Name="FK_CatCatalogsProducts" Association="Self.FK_CatCatalogsProducts">
             <End Role="CatCatalogs" EntitySet="CatCatalogs" />
@@ -594,6 +562,10 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="CatTypeProduct" EntitySet="CatTypeProduct" />
             <End Role="Products" EntitySet="Products" />
           </AssociationSet>
+          <AssociationSet Name="FK_IDProducto" Association="Self.FK_IDProducto">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
+          </AssociationSet>
           <AssociationSet Name="FK_ProductsCatProviders" Association="Self.FK_ProductsCatProviders">
             <End Role="CatProviders" EntitySet="CatProviders" />
             <End Role="Products" EntitySet="Products" />
@@ -605,10 +577,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <AssociationSet Name="FK_ProductsDetailProduct" Association="Self.FK_ProductsDetailProduct">
             <End Role="Products" EntitySet="Products" />
             <End Role="DetailProduct" EntitySet="DetailProduct" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductsImagesProduct" Association="Self.FK_ProductsImagesProduct">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
           </AssociationSet>
           <AssociationSet Name="FK_ProductsSimilarProduct" Association="Self.FK_ProductsSimilarProduct">
             <End Role="Products" EntitySet="Products" />
@@ -623,8 +591,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Qualification" EntitySet="Qualification" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -638,7 +605,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
           <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="ImagesProduct" Relationship="Self.FK_CatBrandsImagesProduct" FromRole="CatBrands" ToRole="ImagesProduct" />
           <NavigationProperty Name="Products" Relationship="Self.FK_CatBrandsProducts" FromRole="CatBrands" ToRole="Products" />
         </EntityType>
         <EntityType Name="CatCatalogs">
@@ -653,7 +619,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Property Name="DateUpdate" Type="DateTime" Precision="3" />
           <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="CatProviders" Relationship="Self.FK_CatCatalogsCatProviders" FromRole="CatCatalogs" ToRole="CatProviders" />
-          <NavigationProperty Name="ImagesProduct" Relationship="Self.FK_CatCatalogsImagesProduct" FromRole="CatCatalogs" ToRole="ImagesProduct" />
           <NavigationProperty Name="Products" Relationship="Self.FK_CatCatalogsProducts" FromRole="CatCatalogs" ToRole="Products" />
         </EntityType>
         <EntityType Name="CatColors">
@@ -786,20 +751,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <NavigationProperty Name="CatTypeDetails" Relationship="Self.FK_CatTypeDetailsDetailProduct" FromRole="DetailProduct" ToRole="CatTypeDetails" />
           <NavigationProperty Name="Products" Relationship="Self.FK_ProductsDetailProduct" FromRole="DetailProduct" ToRole="Products" />
         </EntityType>
-        <EntityType Name="ImagesProduct">
-          <Key>
-            <PropertyRef Name="IdImage" />
-          </Key>
-          <Property Name="IdImage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="IdImageProduct" Type="Int32" Nullable="false" />
-          <Property Name="Decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-          <Property Name="DateUpdate" Type="DateTime" Precision="3" />
-          <Property Name="IsEnabled" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="CatBrands" Relationship="Self.FK_CatBrandsImagesProduct" FromRole="ImagesProduct" ToRole="CatBrands" />
-          <NavigationProperty Name="CatCatalogs" Relationship="Self.FK_CatCatalogsImagesProduct" FromRole="ImagesProduct" ToRole="CatCatalogs" />
-          <NavigationProperty Name="Products" Relationship="Self.FK_ProductsImagesProduct" FromRole="ImagesProduct" ToRole="Products" />
-        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="Id" />
@@ -827,10 +778,10 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <NavigationProperty Name="CatTypeProduct" Relationship="Self.FK_CatTypeProductProducts" FromRole="Products" ToRole="CatTypeProduct" />
           <NavigationProperty Name="Comments" Relationship="Self.FK_ProductsComments" FromRole="Products" ToRole="Comments" />
           <NavigationProperty Name="DetailProduct" Relationship="Self.FK_ProductsDetailProduct" FromRole="Products" ToRole="DetailProduct" />
-          <NavigationProperty Name="ImagesProduct" Relationship="Self.FK_ProductsImagesProduct" FromRole="Products" ToRole="ImagesProduct" />
           <NavigationProperty Name="SimilarProduct" Relationship="Self.FK_ProductsSimilarProduct" FromRole="Products" ToRole="SimilarProduct" />
           <NavigationProperty Name="SizeForProduct" Relationship="Self.FK_ProductsSizeForProduct" FromRole="Products" ToRole="SizeForProduct" />
           <NavigationProperty Name="Qualification" Relationship="Self.FK_QualificationProducts" FromRole="Products" ToRole="Qualification" />
+          <NavigationProperty Name="ImagesProduct" Relationship="DataProductsModel.FK_IDProducto" FromRole="Products" ToRole="ImagesProduct" />
         </EntityType>
         <EntityType Name="Qualification">
           <Key>
@@ -889,18 +840,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
-        <Association Name="FK_CatBrandsImagesProduct">
-          <End Role="CatBrands" Type="Self.CatBrands" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CatBrands">
-              <PropertyRef Name="IdBrand" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_CatBrandsProducts">
           <End Role="CatBrands" Type="Self.CatBrands" Multiplicity="0..1" />
           <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -922,18 +861,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </Principal>
             <Dependent Role="CatCatalogs">
               <PropertyRef Name="IdProvider" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CatCatalogsImagesProduct">
-          <End Role="CatCatalogs" Type="Self.CatCatalogs" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CatCatalogs">
-              <PropertyRef Name="IdCatalog" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1081,18 +1008,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProductsImagesProduct">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ImagesProduct">
-              <PropertyRef Name="IdImageProduct" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ProductsSimilarProduct">
           <End Role="Products" Type="Self.Products" Multiplicity="1" />
           <End Role="SimilarProduct" Type="Self.SimilarProduct" Multiplicity="*" />
@@ -1142,17 +1057,12 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
           <EntitySet Name="database_firewall_rules1" EntityType="Self.database_firewall_rules1" />
           <EntitySet Name="DetailProduct" EntityType="Self.DetailProduct" />
-          <EntitySet Name="ImagesProduct" EntityType="Self.ImagesProduct" />
           <EntitySet Name="Products" EntityType="Self.Products" />
           <EntitySet Name="Qualification" EntityType="Self.Qualification" />
           <EntitySet Name="SimilarProduct" EntityType="Self.SimilarProduct" />
           <EntitySet Name="SizeForProduct" EntityType="Self.SizeForProduct" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="database_firewall_rules2" EntityType="Self.database_firewall_rules2" />
-          <AssociationSet Name="FK_CatBrandsImagesProduct" Association="Self.FK_CatBrandsImagesProduct">
-            <End Role="CatBrands" EntitySet="CatBrands" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
-          </AssociationSet>
           <AssociationSet Name="FK_CatBrandsProducts" Association="Self.FK_CatBrandsProducts">
             <End Role="CatBrands" EntitySet="CatBrands" />
             <End Role="Products" EntitySet="Products" />
@@ -1160,10 +1070,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <AssociationSet Name="FK_CatCatalogsCatProviders" Association="Self.FK_CatCatalogsCatProviders">
             <End Role="CatProviders" EntitySet="CatProviders" />
             <End Role="CatCatalogs" EntitySet="CatCatalogs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CatCatalogsImagesProduct" Association="Self.FK_CatCatalogsImagesProduct">
-            <End Role="CatCatalogs" EntitySet="CatCatalogs" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
           </AssociationSet>
           <AssociationSet Name="FK_CatCatalogsProducts" Association="Self.FK_CatCatalogsProducts">
             <End Role="CatCatalogs" EntitySet="CatCatalogs" />
@@ -1213,10 +1119,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Products" EntitySet="Products" />
             <End Role="DetailProduct" EntitySet="DetailProduct" />
           </AssociationSet>
-          <AssociationSet Name="FK_ProductsImagesProduct" Association="Self.FK_ProductsImagesProduct">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
-          </AssociationSet>
           <AssociationSet Name="FK_ProductsSimilarProduct" Association="Self.FK_ProductsSimilarProduct">
             <End Role="Products" EntitySet="Products" />
             <End Role="SimilarProduct" EntitySet="SimilarProduct" />
@@ -1231,7 +1133,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           </AssociationSet>
           <FunctionImport Name="LFGC1_AllProducts" ReturnType="Collection(DataProductsModel.LFGC1_AllProducts_Result)" />
           <FunctionImport Name="LFGC1_DeleteProductID">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_InsertProduct">
             <Parameter Name="IdType" Mode="In" Type="Int32" />
@@ -1251,10 +1153,10 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_SearchProductID" ReturnType="Collection(DataProductsModel.LFGC1_SearchProductID_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_SearchProductName" ReturnType="Collection(DataProductsModel.LFGC1_SearchProductName_Result)">
-            <Parameter Name="ProductName" Mode="In" Type="String" />
+          <Parameter Name="ProductName" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="LFGC1_UpdateProduct">
             <Parameter Name="ProductId" Mode="In" Type="Int32" />
@@ -1274,6 +1176,11 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="Keywords" Mode="In" Type="String" />
             <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
           </FunctionImport>
+          <EntitySet Name="ImagesProduct" EntityType="DataProductsModel.ImagesProduct" />
+          <AssociationSet Name="FK_IDProducto" Association="DataProductsModel.FK_IDProducto">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="ImagesProduct" EntitySet="ImagesProduct" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="LFGC1_AllProducts_Result">
           <Property Type="Int32" Name="Id" Nullable="false" />
@@ -1329,6 +1236,30 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
           <Property Type="String" Name="Keywords" Nullable="true" />
           <Property Type="DateTime" Name="DateUpdate" Nullable="true" Precision="23" />
         </ComplexType>
+        <EntityType Name="ImagesProduct">
+          <Key>
+            <PropertyRef Name="IdImage" />
+          </Key>
+          <Property Name="IdImage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdProduct" Type="Int32" Nullable="false" />
+          <Property Name="Decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="DataProductsModel.FK_IDProducto" FromRole="ImagesProduct" ToRole="Products" />
+        </EntityType>
+        <Association Name="FK_IDProducto">
+          <End Type="DataProductsModel.Products" Role="Products" Multiplicity="1" />
+          <End Type="DataProductsModel.ImagesProduct" Role="ImagesProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ImagesProduct">
+              <PropertyRef Name="IdProduct" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1471,18 +1402,6 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
                 <ScalarProperty Name="IdTypeDetail" ColumnName="IdTypeDetail" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ImagesProduct">
-            <EntityTypeMapping TypeName="DataProductsModel.ImagesProduct">
-              <MappingFragment StoreEntitySet="ImagesProduct">
-                <ScalarProperty Name="IdImage" ColumnName="IdImage" />
-                <ScalarProperty Name="IdImageProduct" ColumnName="IdImageProduct" />
-                <ScalarProperty Name="Decription" ColumnName="Decription" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
-                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1629,6 +1548,18 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="LFGC1_UpdateProduct" FunctionName="DataProductsModel.Store.LFGC1_UpdateProduct" />
+          <EntitySetMapping Name="ImagesProduct">
+            <EntityTypeMapping TypeName="DataProductsModel.ImagesProduct">
+              <MappingFragment StoreEntitySet="ImagesProduct">
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Decription" ColumnName="Decription" />
+                <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+                <ScalarProperty Name="IdImage" ColumnName="IdImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

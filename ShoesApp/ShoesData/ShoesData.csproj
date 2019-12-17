@@ -77,7 +77,6 @@
     <Compile Include="CatTypeProduct.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Comments.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

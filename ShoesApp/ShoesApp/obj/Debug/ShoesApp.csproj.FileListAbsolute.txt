@@ -25,3 +25,4 @@ C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.pdb
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.BusquedaProducto.resources
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.EliminarRegistro.resources
 C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.AgregarRegistro.resources
+C:\Users\Curso\source\repos\ShoesApp\ShoesApp\obj\Debug\ShoesApp.EditarProducto.resources

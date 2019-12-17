@@ -1,0 +1,17 @@
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\Watcher.exe.config
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\Watcher.exe
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\Watcher.pdb
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\System.Data.Common.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\System.Data.SqlClient.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\TableDependency.SqlClient.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\obj\Debug\Watcher.csprojAssemblyReference.cache
+C:\Users\Curso\source\repos\ShoesApp\Watcher\obj\Debug\Watcher.csproj.CoreCompileInputs.cache
+C:\Users\Curso\source\repos\ShoesApp\Watcher\obj\Debug\Watcher.csproj.CopyComplete
+C:\Users\Curso\source\repos\ShoesApp\Watcher\obj\Debug\Watcher.exe
+C:\Users\Curso\source\repos\ShoesApp\Watcher\obj\Debug\Watcher.pdb
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\ShoesData.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\EntityFramework.dll
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\ShoesData.pdb
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\ShoesData.dll.config
+C:\Users\Curso\source\repos\ShoesApp\Watcher\bin\Debug\EntityFramework.xml

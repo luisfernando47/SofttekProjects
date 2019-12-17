@@ -19,10 +19,10 @@ namespace ShoesData
         {
             this.Comments = new HashSet<Comments>();
             this.DetailProduct = new HashSet<DetailProduct>();
-            this.ImagesProduct = new HashSet<ImagesProduct>();
             this.SimilarProduct = new HashSet<SimilarProduct>();
             this.SizeForProduct = new HashSet<SizeForProduct>();
             this.Qualification = new HashSet<Qualification>();
+            this.ImagesProduct = new HashSet<ImagesProduct>();
         }
     
         public int Id { get; set; }
@@ -52,12 +52,12 @@ namespace ShoesData
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailProduct> DetailProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImagesProduct> ImagesProduct { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SimilarProduct> SimilarProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SizeForProduct> SizeForProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Qualification> Qualification { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ImagesProduct> ImagesProduct { get; set; }
     }
 }

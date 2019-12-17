@@ -30,5 +30,17 @@ namespace ShoesEntidades
             //retorna el id encontrado
             return result;
         }
+        public static string EncuentraNombreBrand(int idbrand)
+        {
+            var context = new DataProductsEntities();
+            //Query para encontrar el id del color seleccionado
+            var Querybrandname =
+                from c in context.CatBrands
+                where c.IdBrand.Equals(idbrand)    //    Contains(idcolor)
+                select c.Name;
+            var result = Querybrandname.FirstOrDefault();
+            //retorna el id encontrado
+            return result;
+        }
     }
 }

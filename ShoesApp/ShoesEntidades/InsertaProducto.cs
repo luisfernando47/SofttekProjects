@@ -41,5 +41,18 @@ namespace ShoesEntidades
                                   );
 
         }
-    }
+        public static void InsertarTalla(int idprod, int idSize)
+        {
+            var context = new DataProductsEntities();
+            var insert = new SizeForProduct()
+            {
+                IdProduct = idprod,
+                IdSize = idSize
+            };
+            context.SizeForProduct.Add(insert);
+            context.SaveChanges();
+        }
+}
+
+   
 }

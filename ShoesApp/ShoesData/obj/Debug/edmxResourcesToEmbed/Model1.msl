@@ -140,18 +140,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ImagesProduct">
-      <EntityTypeMapping TypeName="DataProductsModel.ImagesProduct">
-        <MappingFragment StoreEntitySet="ImagesProduct">
-          <ScalarProperty Name="IdImage" ColumnName="IdImage" />
-          <ScalarProperty Name="IdImageProduct" ColumnName="IdImageProduct" />
-          <ScalarProperty Name="Decription" ColumnName="Decription" />
-          <ScalarProperty Name="Image" ColumnName="Image" />
-          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
-          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="DataProductsModel.Products">
         <MappingFragment StoreEntitySet="Products">
@@ -295,5 +283,17 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="LFGC1_UpdateProduct" FunctionName="DataProductsModel.Store.LFGC1_UpdateProduct" />
+    <EntitySetMapping Name="ImagesProduct">
+      <EntityTypeMapping TypeName="DataProductsModel.ImagesProduct">
+        <MappingFragment StoreEntitySet="ImagesProduct">
+          <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+          <ScalarProperty Name="DateUpdate" ColumnName="DateUpdate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Decription" ColumnName="Decription" />
+          <ScalarProperty Name="IdProduct" ColumnName="IdProduct" />
+          <ScalarProperty Name="IdImage" ColumnName="IdImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

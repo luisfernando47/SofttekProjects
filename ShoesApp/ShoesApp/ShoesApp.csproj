@@ -68,6 +68,12 @@
     <Compile Include="BusquedaProducto.Designer.cs">
       <DependentUpon>BusquedaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarProducto.Designer.cs">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BusquedaProducto.resx">
       <DependentUpon>BusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarProducto.resx">
+      <DependentUpon>EditarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarRegistro.resx">
       <DependentUpon>EliminarRegistro.cs</DependentUpon>

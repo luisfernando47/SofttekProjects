@@ -56,8 +56,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtKeywords = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -298,22 +296,6 @@
             this.txtKeywords.Size = new System.Drawing.Size(121, 26);
             this.txtKeywords.TabIndex = 28;
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(619, 324);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 20);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "Fecha";
-            // 
-            // time
-            // 
-            this.time.Location = new System.Drawing.Point(729, 318);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(164, 26);
-            this.time.TabIndex = 31;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(435, 390);
@@ -338,8 +320,6 @@
             this.ClientSize = new System.Drawing.Size(937, 450);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.time);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtKeywords);
             this.Controls.Add(this.label14);
@@ -406,8 +386,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtKeywords;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.DateTimePicker time;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtTitle;
     }

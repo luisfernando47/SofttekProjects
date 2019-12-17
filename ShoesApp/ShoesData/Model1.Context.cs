@@ -39,13 +39,13 @@ namespace ShoesData
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
         public virtual DbSet<database_firewall_rules1> database_firewall_rules1 { get; set; }
         public virtual DbSet<DetailProduct> DetailProduct { get; set; }
-        public virtual DbSet<ImagesProduct> ImagesProduct { get; set; }
         public virtual DbSet<Products> Products { get; set; }
         public virtual DbSet<Qualification> Qualification { get; set; }
         public virtual DbSet<SimilarProduct> SimilarProduct { get; set; }
         public virtual DbSet<SizeForProduct> SizeForProduct { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<database_firewall_rules2> database_firewall_rules2 { get; set; }
+        public virtual DbSet<ImagesProduct> ImagesProduct { get; set; }
     
         public virtual ObjectResult<LFGC1_AllProducts_Result> LFGC1_AllProducts()
         {

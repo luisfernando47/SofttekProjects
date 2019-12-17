@@ -52,15 +52,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AgregaRegistro.cs" />
+    <Compile Include="BuscaIdTablaImagen.cs" />
     <Compile Include="DeleteReg.cs" />
+    <Compile Include="GuardarImagen.cs" />
+    <Compile Include="InsertaProducto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryBrand.cs" />
     <Compile Include="QueryCatalog.cs" />
     <Compile Include="QueryColor.cs" />
+    <Compile Include="QueryProducts.cs" />
     <Compile Include="QueryProvider.cs" />
+    <Compile Include="QueryTalla.cs" />
     <Compile Include="SearchID.cs" />
     <Compile Include="QueryType.cs" />
     <Compile Include="SearchName.cs" />
+    <Compile Include="UpdateProducto.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
