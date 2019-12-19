@@ -1,0 +1,15 @@
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\ShoesAppFileWatcher.exe.config
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\ShoesAppFileWatcher.exe
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\ShoesAppFileWatcher.pdb
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.csprojAssemblyReference.cache
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.Properties.Resources.resources
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.csproj.GenerateResource.cache
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.csproj.CoreCompileInputs.cache
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.exe
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.pdb
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.Form1.resources
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\EntityFramework.dll
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\EntityFramework.xml
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Curso\source\repos\ShoesAppWatcher\ShoesAppFileWatcher\obj\Debug\ShoesAppFileWatcher.csproj.CopyComplete
