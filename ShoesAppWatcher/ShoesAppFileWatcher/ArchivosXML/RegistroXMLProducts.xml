@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ArrayOfProductClean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductClean>
+    <Id>0</Id>
+    <IdType>1</IdType>
+    <IdColor>1</IdColor>
+    <IdBrand>2</IdBrand>
+    <IdProvider>2</IdProvider>
+    <IdCatalog>3</IdCatalog>
+    <Title>nike</Title>
+    <Nombre>nike</Nombre>
+    <Description>nike</Description>
+    <Observations>nike</Observations>
+    <PriceDistributor>100</PriceDistributor>
+    <PriceClient>100</PriceClient>
+    <PriceMember>100</PriceMember>
+    <IsEnabled>true</IsEnabled>
+    <Keywords>ddecee</Keywords>
+    <DateUpdate>2019-12-25T00:00:00-06:00</DateUpdate>
+  </ProductClean>
+</ArrayOfProductClean>

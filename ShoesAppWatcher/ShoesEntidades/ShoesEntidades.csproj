@@ -66,6 +66,7 @@
     <Compile Include="SearchID.cs" />
     <Compile Include="QueryType.cs" />
     <Compile Include="SearchName.cs" />
+    <Compile Include="TraerUltimoRegistro.cs" />
     <Compile Include="UpdateProducto.cs" />
   </ItemGroup>
   <ItemGroup>
