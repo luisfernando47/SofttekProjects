@@ -68,7 +68,6 @@ C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\EntityFramework.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\EntityFramework.SqlServer.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.Helpers.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.Mvc.xml
-C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.Optimization.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.Razor.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.WebPages.xml
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\System.Web.WebPages.Deployment.xml
@@ -79,4 +78,3 @@ C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\bin\Microsoft.CodeDom.Providers.
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\obj\Debug\ShoesApp3.csproj.CopyComplete
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\obj\Debug\ShoesApp3.dll
 C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\obj\Debug\ShoesApp3.pdb
-C:\Users\Curso\source\repos\ShoesApp3\ShoesApp3\obj\Debug\ShoesApp3.csprojAssemblyReference.cache

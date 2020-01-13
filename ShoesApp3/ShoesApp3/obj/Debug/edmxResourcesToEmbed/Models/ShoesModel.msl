@@ -735,6 +735,7 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MPVI_INSERT" FunctionName="DataProductsModel.Store.MPVI_INSERT" />
     <FunctionImportMapping FunctionImportName="MPVI_SEARCH_ALL" FunctionName="DataProductsModel.Store.MPVI_SEARCH_ALL">
       <ResultMapping>
         <ComplexTypeMapping TypeName="DataProductsModel.MPVI_SEARCH_ALL_Result">

@@ -887,6 +887,71 @@ namespace ShoesApp3.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LFGC1_MuestraProductos_Result>("LFGC1_MuestraProductos");
         }
     
+        public virtual int MPVI_INSERT(Nullable<int> idType, Nullable<int> idColor, Nullable<int> idBrand, Nullable<int> idProvider, Nullable<int> idCatalog, string title, string nombre, string description, string observations, Nullable<decimal> priceDistributor, Nullable<decimal> priceClient, Nullable<decimal> priceMember, Nullable<bool> isEnabled, string keywords, Nullable<System.DateTime> dataUpdate)
+        {
+            var idTypeParameter = idType.HasValue ?
+                new ObjectParameter("IdType", idType) :
+                new ObjectParameter("IdType", typeof(int));
+    
+            var idColorParameter = idColor.HasValue ?
+                new ObjectParameter("IdColor", idColor) :
+                new ObjectParameter("IdColor", typeof(int));
+    
+            var idBrandParameter = idBrand.HasValue ?
+                new ObjectParameter("IdBrand", idBrand) :
+                new ObjectParameter("IdBrand", typeof(int));
+    
+            var idProviderParameter = idProvider.HasValue ?
+                new ObjectParameter("IdProvider", idProvider) :
+                new ObjectParameter("IdProvider", typeof(int));
+    
+            var idCatalogParameter = idCatalog.HasValue ?
+                new ObjectParameter("IdCatalog", idCatalog) :
+                new ObjectParameter("IdCatalog", typeof(int));
+    
+            var titleParameter = title != null ?
+                new ObjectParameter("Title", title) :
+                new ObjectParameter("Title", typeof(string));
+    
+            var nombreParameter = nombre != null ?
+                new ObjectParameter("Nombre", nombre) :
+                new ObjectParameter("Nombre", typeof(string));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var observationsParameter = observations != null ?
+                new ObjectParameter("Observations", observations) :
+                new ObjectParameter("Observations", typeof(string));
+    
+            var priceDistributorParameter = priceDistributor.HasValue ?
+                new ObjectParameter("PriceDistributor", priceDistributor) :
+                new ObjectParameter("PriceDistributor", typeof(decimal));
+    
+            var priceClientParameter = priceClient.HasValue ?
+                new ObjectParameter("PriceClient", priceClient) :
+                new ObjectParameter("PriceClient", typeof(decimal));
+    
+            var priceMemberParameter = priceMember.HasValue ?
+                new ObjectParameter("PriceMember", priceMember) :
+                new ObjectParameter("PriceMember", typeof(decimal));
+    
+            var isEnabledParameter = isEnabled.HasValue ?
+                new ObjectParameter("IsEnabled", isEnabled) :
+                new ObjectParameter("IsEnabled", typeof(bool));
+    
+            var keywordsParameter = keywords != null ?
+                new ObjectParameter("Keywords", keywords) :
+                new ObjectParameter("Keywords", typeof(string));
+    
+            var dataUpdateParameter = dataUpdate.HasValue ?
+                new ObjectParameter("DataUpdate", dataUpdate) :
+                new ObjectParameter("DataUpdate", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("MPVI_INSERT", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dataUpdateParameter);
+        }
+    
         public virtual ObjectResult<MPVI_SEARCH_ALL_Result> MPVI_SEARCH_ALL()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MPVI_SEARCH_ALL_Result>("MPVI_SEARCH_ALL");
@@ -1075,6 +1140,8 @@ namespace ShoesApp3.Models
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Nnmrh_Insert_Produc", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dataUpdateParameter);
         }
+
+        public System.Data.Entity.DbSet<ShoesApp3.Models.FASV1_GetAllProducts_Result> FASV1_GetAllProducts_Result { get; set; }
 
         public System.Data.Entity.DbSet<ShoesApp3.Models.LFGC1_MuestraProductos_Result> LFGC1_MuestraProductos_Result { get; set; }
     }

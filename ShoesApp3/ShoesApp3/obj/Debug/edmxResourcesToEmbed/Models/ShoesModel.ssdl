@@ -689,6 +689,23 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
     <Parameter Name="DataUpdate" Type="datetime" Mode="In" />
   </Function>
   <Function Name="LFGC1_MuestraProductos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="MPVI_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdType" Type="int" Mode="In" />
+    <Parameter Name="IdColor" Type="int" Mode="In" />
+    <Parameter Name="IdBrand" Type="int" Mode="In" />
+    <Parameter Name="IdProvider" Type="int" Mode="In" />
+    <Parameter Name="IdCatalog" Type="int" Mode="In" />
+    <Parameter Name="Title" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Nombre" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Observations" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PriceDistributor" Type="decimal" Mode="In" />
+    <Parameter Name="PriceClient" Type="decimal" Mode="In" />
+    <Parameter Name="PriceMember" Type="decimal" Mode="In" />
+    <Parameter Name="IsEnabled" Type="bit" Mode="In" />
+    <Parameter Name="Keywords" Type="varchar(max)" Mode="In" />
+    <Parameter Name="DataUpdate" Type="datetime" Mode="In" />
+  </Function>
   <Function Name="MPVI_SEARCH_ALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="MPVI_SEARCH_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="productId" Type="int" Mode="In" />

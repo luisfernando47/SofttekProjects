@@ -7,26 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace ShoesApp3.Models
 {
     using System;
-    
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class LFGC1_MuestraProductos_Result
     {
         public int Id { get; set; }
-        [DisplayName("Type:")]
         public Nullable<int> IdType { get; set; }
-        [DisplayName("Color:")]
         public Nullable<int> IdColor { get; set; }
-        [DisplayName("Brand:")]
         public Nullable<int> IdBrand { get; set; }
-        [DisplayName("Provider:")]
         public Nullable<int> IdProvider { get; set; }
-        [DisplayName("Catalog:")]
         public int IdCatalog { get; set; }
         public string Title { get; set; }
         public string Nombre { get; set; }
@@ -50,7 +43,6 @@ namespace ShoesApp3.Models
         public List<CatProviders> ProvidersCollection { get; set; }
         [NotMapped]
         public List<CatCatalogs> CatalogsCollection { get; set; }
-
 
     }
 }

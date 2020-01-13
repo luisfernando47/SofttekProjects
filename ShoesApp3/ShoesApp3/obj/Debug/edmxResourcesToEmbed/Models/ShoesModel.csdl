@@ -808,6 +808,23 @@
       <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="LFGC1_MuestraProductos" ReturnType="Collection(DataProductsModel.LFGC1_MuestraProductos_Result)" />
+    <FunctionImport Name="MPVI_INSERT">
+      <Parameter Name="IdType" Mode="In" Type="Int32" />
+      <Parameter Name="IdColor" Mode="In" Type="Int32" />
+      <Parameter Name="IdBrand" Mode="In" Type="Int32" />
+      <Parameter Name="IdProvider" Mode="In" Type="Int32" />
+      <Parameter Name="IdCatalog" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Observations" Mode="In" Type="String" />
+      <Parameter Name="PriceDistributor" Mode="In" Type="Decimal" />
+      <Parameter Name="PriceClient" Mode="In" Type="Decimal" />
+      <Parameter Name="PriceMember" Mode="In" Type="Decimal" />
+      <Parameter Name="IsEnabled" Mode="In" Type="Boolean" />
+      <Parameter Name="Keywords" Mode="In" Type="String" />
+      <Parameter Name="DataUpdate" Mode="In" Type="DateTime" />
+    </FunctionImport>
     <FunctionImport Name="MPVI_SEARCH_ALL" ReturnType="Collection(DataProductsModel.MPVI_SEARCH_ALL_Result)" />
     <FunctionImport Name="MPVI_SEARCH_ID" ReturnType="Collection(DataProductsModel.MPVI_SEARCH_ID_Result)">
       <Parameter Name="productId" Mode="In" Type="Int32" />

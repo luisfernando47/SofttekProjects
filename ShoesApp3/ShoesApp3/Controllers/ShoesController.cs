@@ -10,21 +10,46 @@ namespace ShoesApp3.Controllers
     public class ShoesController : Controller
     {
         // GET: Shoes
-        public ActionResult Index()
+        DataProductsEntities context = new DataProductsEntities();
+        public ActionResult Index(string searchingID,string searchingName)
         {
             try
             {
-                var context = new DataProductsEntities();
-                var productos=context.LFGC1_MuestraProductos();
-                return View(productos);
+                
+               // var productos=context.LFGC1_MuestraProductos();
+
+               // var Busqueda = context.LFGC1_BuscaProductoNombre(searching);
+
+               var QueryFiltro = from s in context.LFGC1_MuestraProductos()
+                   select s;
+
+
+                if (!String.IsNullOrEmpty(searchingID))
+                {
+                    QueryFiltro = QueryFiltro
+                        .Where(s => s.Id == Convert.ToInt32(searchingID));
+                }
+                if (!String.IsNullOrEmpty(searchingName))
+                {
+                    QueryFiltro = QueryFiltro
+                        .Where(s => s.Nombre.Contains(searchingName));
+                }
+
+                //ModelState.Remove("searchingID");
+                //ModelState.Remove("searchingName");
+
+                return View(QueryFiltro);
+
+
+
             }
             catch (Exception e)
             {
                
-                throw;
+                throw e;
             }
             
-            return View();
+            
         }
         //get, solo llama a la vista
         public ActionResult Create()
@@ -73,8 +98,75 @@ namespace ShoesApp3.Controllers
             catch (Exception e)
             {
 
-                throw;
+                throw e;
             }
         }
+
+        public ActionResult Edit2(int id)
+        {
+            try
+            {
+                using (var db = new DataProductsEntities())
+                {
+                    var Buscar = db.LFGC1_MuestraProductos().Where(a => a.Id == id).FirstOrDefault();
+                   //var Buscar2 = db.LFGC1_MuestraProductos().find(id);
+                    return View();
+                }
+            }
+            catch (Exception e)
+            {
+               
+                throw e;
+            }
+            
+
+           
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit2(Products up)
+        {
+            try
+            {
+                using (var db = new DataProductsEntities())
+                {
+                    Products prod = db.Products.Find(up.Id); //trae el id oculto desde get
+                    prod.Nombre = up.Nombre;
+                    prod.IdColor = up.IdColor;
+                    prod.Description = up.Description;
+                    prod.PriceClient = up.PriceClient;
+                    prod.IsEnabled = up.IsEnabled;
+                    prod.DateUpdate = DateTime.Now;
+
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                
+                throw;
+            }
+
+            
+        }
+
+        public ActionResult Delete(int id)
+        {
+            using (var db = new DataProductsEntities())
+
+            {
+
+                LFGC1_MuestraProductos_Result Del = db.LFGC1_MuestraProductos().Where(a => a.Id == id).FirstOrDefault();
+                db.LFGC1_EliminaProductoPorID(id);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+
+            }
+        }
+
+
     }
 }
