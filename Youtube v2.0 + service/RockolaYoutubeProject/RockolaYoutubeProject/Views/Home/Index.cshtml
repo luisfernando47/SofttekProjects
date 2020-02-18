@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div class="row">
+    @* Searcher *@
+    <div class="col-md-12">
+        <h2>Getting started</h2>
+        <p>
+            <input type="text" class="form-control" id="txtkeyword" placeholder="Buscar"/>
+        </p>
+        <p><a class="btn btn-default" href="javascript:void(0)" onclick="btnSearch()">Buscar</a></p>
+    </div>
+    @* Search  *@
+    <div class="col-lg-10 row">
+        <div class="col-lg-8" id="ListYoutube">
+
+        </div>
+        <div class="col-md-4">
+            <div id="player" >
+
+            </div> @*crea el reproductor*@
+        </div>
+    </div>
+    @*<div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>*@
+</div>
+
+
+
+<script>
+    function btnSearch() {
+        $.ajax
+        (
+            {
+                url: '@Url.Action("SearchList")?palabra=' + $('#txtkeyword').val(),
+                type: 'GET',
+                success: function (result) {
+                    $('#ListYoutube').html(result);
+                    //respuesta
+                }
+            }
+        );
+
+    }
+</script>
